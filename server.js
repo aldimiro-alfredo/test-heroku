@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (request, response) => {
-    response.send('<span style="color: #f00;"> Hello Word ! </span>');
+app.use(express.json())
+
+app.get('/', (request, response) => {
+    return response.json({ message: 'Server up' })
 })
 
-const server = app.listen(process.env.PORT || 8080, () => {
+const server = app.listen(process.env.PORT || 5000, () => {
     const port = server.address().port;
     console.log(`Express is working on port ${port}`);
-  });
+});
