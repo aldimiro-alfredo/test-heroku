@@ -12,13 +12,14 @@ export class AppComponent {
   public courses: any = []
 
   constructor(private http: HttpClient) {
-    this.listOfCourses()
+    //this.listOfCourses()
   }
 
+  /*
   private listOfCourses() {
     this.http.get('https://adonisdeploy243.herokuapp.com/listagem')
       .subscribe(res => {
         this.courses = Object(res)
       })
-  }
+  }*/
 }
