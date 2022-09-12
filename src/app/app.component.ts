@@ -8,20 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-deploy';
-
-  public courses: any = []
-
-  constructor(public http: HttpClient) {
-  }
-
-  ngOnInit() {
-    this.listOfCourses()
-  }
-
-  private listOfCourses() {
-    this.http.get('https://adonisdeploy243.herokuapp.com/listagem')
-      .subscribe(res => {
-        this.courses = Object(res)
-      })
-  }
 }
