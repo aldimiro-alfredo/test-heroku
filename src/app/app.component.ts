@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,7 +10,7 @@ export class AppComponent {
 
   public courses: any = []
 
-  constructor(private http: HttpClient) {
+  constructor() {
     //this.listOfCourses()
   }
 
