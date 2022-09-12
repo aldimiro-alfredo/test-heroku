@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ListCoursesComponent } from './components/list-courses/list-courses.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,10 @@ import { ListCoursesComponent } from './components/list-courses/list-courses.com
     ListCoursesComponent
   ],
   imports: [
-    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
