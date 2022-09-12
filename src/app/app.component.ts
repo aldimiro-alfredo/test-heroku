@@ -11,7 +11,7 @@ export class AppComponent {
 
   public courses: any = []
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
   }
 
   ngOnInit() {
