@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,15 +11,17 @@ export class AppComponent {
 
   public courses: any = []
 
-  constructor() {
-    //this.listOfCourses()
+  constructor(private http: HttpClient) {
   }
 
-  /*
+  ngOnInit() {
+    this.listOfCourses()
+  }
+
   private listOfCourses() {
     this.http.get('https://adonisdeploy243.herokuapp.com/listagem')
       .subscribe(res => {
         this.courses = Object(res)
       })
-  }*/
+  }
 }
