@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-deploy';
+
+  public courses: any = []
+
+  constructor(private http: HttpClient) {
+    this.listOfCourses()
+  }
+
+  private listOfCourses() {
+    this.http.get('https://adonisdeploy243.herokuapp.com/listagem')
+      .subscribe(res => {
+        this.courses = Object(res)
+      })
+  }
 }
