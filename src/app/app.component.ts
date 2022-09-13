@@ -11,13 +11,18 @@ import { environment } from 'src/environments/environment';
 export class AppComponent {
   public title = 'angular-deploy';
 
-  public courses: any = []
+  //public courses: any = []
+  public courses =
+    [{ name: 'Aldimiro', description: 'ok', url: 'Aldimiro', price: '2000' },
+    { name: 'Matondo', description: 'ok', url: 'Aldimiro', price: '3000' },
+    { name: 'Manuel', description: 'ok', url: 'Aldimiro', price: '4000' }
+    ]
   private readonly baseUrl: string = environment.baseUrl;
 
   constructor(public http: HttpClient) { }
 
   ngOnInit(): void {
-    this.listOfCourses()
+    //this.listOfCourses()
   }
 
   private listOfCourses() {
