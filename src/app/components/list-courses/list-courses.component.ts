@@ -1,24 +1,28 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-list-courses',
   templateUrl: './list-courses.component.html',
   styleUrls: ['./list-courses.component.css']
 })
+
+@Injectable()
 export class ListCoursesComponent implements OnInit {
 
   public courses: any = []
+  private readonly baseUrl: string = environment.baseUrl;
 
   constructor(public http: HttpClient) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.listOfCourses()
   }
 
   private listOfCourses() {
-    this.http.get('https://adonisdeploy243.herokuapp.com/listagem')
+    this.http.get(`${this.baseUrl}listagem`)
       .subscribe(res => {
         this.courses = Object(res)
       })
