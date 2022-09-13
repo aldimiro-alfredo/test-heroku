@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -11,19 +11,13 @@ import { environment } from 'src/environments/environment';
 export class AppComponent {
   public title = 'angular-deploy';
 
-  //public courses: any = []
-  public courses =
-    [
-      { name: 'Aldimiro', description: 'ok', url: 'Aldimiro', price: '2000' },
-      { name: 'Matondo', description: 'ok', url: 'Aldimiro', price: '3000' },
-      { name: 'Manuel', description: 'ok', url: 'Aldimiro', price: '4000' }
-    ]
+  public courses: any = []
   private readonly baseUrl: string = environment.baseUrl;
 
   constructor(public http: HttpClient) { }
 
   ngOnInit(): void {
-    //this.listOfCourses()
+    this.listOfCourses()
   }
 
   private listOfCourses() {
