@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./list-courses.component.css']
 })
 
-@Injectable()
 export class ListCoursesComponent implements OnInit {
 
   public courses: any = []

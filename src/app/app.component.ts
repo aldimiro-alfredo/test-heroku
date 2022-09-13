@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.css']
 })
 
-@Injectable()
 export class AppComponent {
   public title = 'angular-deploy';
 
